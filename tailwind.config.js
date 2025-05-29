@@ -8,4 +8,14 @@ export default {
     extend: {},
   },
   plugins: [],
+  
+  theme: {
+  extend: {
+    fontFamily: {
+      poppins: ['Poppins', 'sans-serif'],
+    },
+  },
+},
+
 }
+
