@@ -1,7 +1,7 @@
 // src/App.jsx
 import logo from './assets/logo.png';
 import Sidebar from './components/Sidebar';
-
+import Topbar from './components/Topbar';
 
 export default function App() {
   return (
@@ -40,26 +40,20 @@ export default function App() {
         </div>
       </aside>
 
+
+      {/* Barra de navegação superior */}
+      <div className="flex">
+        <Topbar />
+      </div>
+
       {/* Conteúdo principal */}
       <main className="flex-1 p-6">
 
         {/* Seção de playlists recomendadas */}
-        <h2 className="text-xl font-semibold mb-4">Essas playlists ainda pensam em você...</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-white p-3 shadow rounded">duskbreaker</div>
-          <div className="bg-white p-3 shadow rounded">Heartguided</div>
-          <div className="bg-white p-3 shadow rounded">ARMAGEDDON</div>
-          <div className="bg-white p-3 shadow rounded">STARCATCHEERS</div>
-        </div>
+
 
         {/* Seção de playlists dos amigos */}
-        <h2 className="text-xl font-semibold mt-8 mb-4">Seus amigos têm bom gosto...</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-white p-3 shadow rounded">Playlist 1</div>
-          <div className="bg-white p-3 shadow rounded">Playlist 2</div>
-          <div className="bg-white p-3 shadow rounded">Playlist 3</div>
-          <div className="bg-white p-3 shadow rounded">Playlist 4</div>
-        </div>
+
 
       </main>
     </div>
