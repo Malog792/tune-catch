@@ -1,6 +1,7 @@
 // src/components/Topbar.jsx
 import { BarChart, BellIcon, Share, UserRound, Search } from 'lucide-react'; // ou substitua pelo <img> se for usar outro ícone
 import { Profiler } from 'react';
+import UserDropdown from './UserDropDown.jsx';
 
 export default function Topbar() {
     return (
@@ -28,21 +29,9 @@ export default function Topbar() {
                 <a href="#" className="text-black hover:text-pink-600 transition">
                     <BellIcon size={26} strokeWidth={2.2} />
                 </a>
+                {/* Ícone de usuário*/}
+                <UserDropdown />
 
-                {/*cumprimentos*/}
-
-                <div className="flex items-center gap-3">
-                    <div className="flex flex-col leading-tight">
-                        <span className="text-sm text-gray-700 font-medium">Olá,</span>
-                        <span className="text-xs text-gray-500 font-medium">usuário!</span>
-                    </div>{/* fim de cumprimentos */}
-
-                    {/* Ícone de usuário */}
-                    <div className="w-9 h-9 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center">
-                       <UserRound size={24} className="text-gray-500" />
-                    </div> {/* fim de ícone de usuário */}
-
-                </div>{/* fim de cumprimentos */}
             </nav> {/* fim de direita */}
         </header>
     );
