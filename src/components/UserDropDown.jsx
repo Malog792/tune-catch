@@ -1,11 +1,11 @@
+// src/components/UserDropdown.jsx
 import { UserRound, LogOut, Settings, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
 export default function UserDropdown() {
   const [open, setOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // 👈 estado para controlar login
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado de login
 
   return (
     <div className="relative">
@@ -27,14 +27,15 @@ export default function UserDropdown() {
       {/* Dropdown */}
       {open && (
         <div className="absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-md animate-fade-in z-50">
-          {!isLoggedIn &&(
+          {!isLoggedIn ? (
+            <Link
+              to="/login"
+              className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >
+              <UserRound size={18} /> Login
+            </Link>
+          ) : (
             <>
-              <Link
-                to="/login"
-                className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              >
-                <UserRound size={18} /> Login
-              </Link>
               <a
                 href="#"
                 className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -44,18 +45,11 @@ export default function UserDropdown() {
               <a
                 href="#"
                 className="flex items-center gap-2 px-4 py-2 text-sm text-red-500 hover:bg-red-100"
-                onClick={() => setIsLoggedIn(false)} // 👈 logout
+                onClick={() => setIsLoggedIn(false)}
               >
                 <LogOut size={18} /> Sair
               </a>
             </>
-          )  (
-            <a
-              href="/login" // 👈 redireciona para sua página de login
-              className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            >
-              <UserRound size={18} /> Login
-            </a>
           )}
         </div>
       )}
